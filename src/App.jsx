@@ -45,7 +45,7 @@ function App() {
         </p>
       </div>
 
-      <div style={{ height: '100vh', background: '#1a1a1a' }}>
+      {/* <div style={{ height: '100vh', background: '#1a1a1a' }}>
         <StaggeredMenu
           position="right"
           items={menuItems}
@@ -61,7 +61,7 @@ function App() {
           onMenuOpen={() => console.log('Menu opened')}
           onMenuClose={() => console.log('Menu closed')}
         />
-      </div>
+      </div> */}
     </div>
   );
 }
