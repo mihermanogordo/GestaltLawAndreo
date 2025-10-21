@@ -21,7 +21,7 @@ function App() {
     // QUITA el overflow-hidden del contenedor principal
     <div className="relative w-screen h-screen">
       {/* GridDistortion - fondo fijo */}
-      <div className="fixed inset-0 z-0">
+      <div className="fixed w-full h-full top-0 left-0 overflow-hidden">
         <div className="absolute inset-0 bg-blue-500" />
         <GridDistortion
           grid={25}
