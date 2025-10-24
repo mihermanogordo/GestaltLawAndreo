@@ -1,0 +1,26 @@
+.grid-distortion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.grid-distortion canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+.grid-distortion.loaded {
+  background: transparent;
+}
+* {
+  box-sizing: border-box;
+}
+/* Cursor personalizado si quieres */
+.grid-distortion {
+  cursor: crosshair;
+}
