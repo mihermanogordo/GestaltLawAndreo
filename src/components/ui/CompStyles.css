@@ -1,0 +1,196 @@
+.gestalt-container-with-grid {
+    min-height: 100vh;
+    background-color: #1d1d1d;
+    position: relative;
+    overflow: hidden;
+}
+
+.gestalt-container-with-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1; 
+}
+
+
+
+.gestalt-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem 1.5rem;
+    z-index: 100; 
+}
+
+.gestalt-content {
+    padding: 30px;
+    width: 600px;
+    position: relative;
+    z-index: 101; 
+}
+
+.gestalt-content h1 {
+    color: #56A6D8;
+    font-family: 'Jakarta', sans-serif;
+    font-size: 2rem;
+    margin: 25px 44px;
+    text-align: left;
+}
+
+.gestalt-content p {
+    color: #c2c2c2; 
+    font-family: 'Jakarta', sans-serif;
+    font-size: 1.125rem;
+    text-align: left;
+    margin: 44px;
+}
+
+
+.gestalt-slider-container {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    right: 0;
+    padding-bottom: 1rem;
+    z-index: 200; 
+}
+
+.gestalt-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    align-items: flex-end;
+    scrollbar-width: none;
+    position: relative;
+    z-index: 201;
+}
+
+.gestalt-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+.gestalt-slide {
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 10; 
+}
+
+.gestalt-image-card {
+    width: 200px;
+    height: 320px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    z-index: 11;
+}
+
+.gestalt-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block; 
+}
+
+.image-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0.75rem;
+    font-size: 13px;
+    transition: all 0.4s ease;
+    z-index: 12;
+}
+
+.gestalt-slide:hover {
+    z-index: 500 !important; 
+}
+
+.gestalt-slide:hover .gestalt-image-card {
+    width: 450px;
+    height: 550px;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(75, 85, 99, 0.5);
+    z-index: 301;
+}
+
+.gestalt-slide:hover .gestalt-image-card img {
+    transform: scale(1.05);
+}
+
+.gestalt-slide:hover .image-number {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.gestalt-slider:has(.gestalt-slide:hover) .gestalt-slide:not(:hover) {
+    transform: translateX(20px);
+}
+
+.gestalt-slide:hover ~ .gestalt-slide {
+    transform: translateX(40px);
+}
+
+.gestalt-slide:hover + .gestalt-slide {
+    transform: translateX(60px);
+}
+
+
+
+@media (max-width: 768px) {
+    .gestalt-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .gestalt-content {
+        padding: 1rem;
+        width: 90%; 
+        margin: 0 auto;
+    }
+    
+    .gestalt-content h1 {
+        font-size: 1.5rem;
+        margin: 20px;
+    }
+    
+    .gestalt-content p {
+        font-size: 1rem;
+        margin: 20px;
+    }
+    
+    .gestalt-image-card {
+        width: 150px;
+        height: 100px;
+    }
+    
+    .gestalt-slide:hover .gestalt-image-card {
+        width: 250px;
+        height: 180px;
+    }
+    
+    .gestalt-slider-container {
+        left: 20px;
+        bottom: 10px;
+    }
+}
