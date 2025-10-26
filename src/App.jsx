@@ -114,7 +114,7 @@ function App() {
               changeMenuColorOnOpen={true}
               colors={['#300407', '#5227FF']}
               accentColor="#300407"
-              isFixed={true} // Esto ahora hará que esté solo en la esquina
+              isFixed={true} 
     onMenuOpen={() => setIsMenuOpen(true)}
     onMenuClose={() => setIsMenuOpen(false)}
             />
